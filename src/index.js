@@ -6,8 +6,9 @@ const port = 5000
 
 app.use(bodyParser.json())
 
-app.get('/todos', (req, res) => {
+app.get('/api/todos', (req, res) => {
 	res.send(get('todos'))
+	//res.send("test");
 })
 
 app.get('/todos/:id', (req, res) => {
