@@ -1,4 +1,4 @@
-const { get, find, insert } = require('./data-access')
+const { get, getNextId, find, insert, update } = require('./data-access')
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
@@ -8,21 +8,35 @@ app.use(bodyParser.json())
 
 app.get('/api/todos', (req, res) => {
 	res.send(get('todos'))
-	//res.send("test");
 })
 
-app.get('/todos/:id', (req, res) => {
+app.get('/api/todos/:id', (req, res) => {
+	console.log("get todos run");
 	const student = find('todos', Number(req.params.id))
 	if (!student) {
 		res.statusCode = 404
 	}
+	console.log("new student = " + student);
 	res.send(student)
 })
 
-app.post('/todos', (req, res) => {
-	insert('todos', req.body)
-	res.statusCode = 204
-	res.send()
+app.post('/api/todos/', (req, res) => {
+
+	const ret = insert('todos', req.body)
+	if (!ret) {
+		res.statusCode = 404
+	}
+	res.send(ret)
+})
+
+app.put('/api/todos/:id', (req, res) => {
+	console.log(req.body);
+	//update('todos', req.body)
+	const ret = update('todos', req.body)
+	if (!ret) {
+		res.statusCode = 404
+	}
+	res.send(ret)
 })
 
 app.listen(port, () => {
