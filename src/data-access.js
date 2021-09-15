@@ -59,7 +59,7 @@ function deleting(entity, row) {
 			console.log("deleted = " + (i+1));
 			break;
 		}
-	return data[entity].find(e => e.id === row.id)
+	return data[entity]
 }
 
 function update(entity, row) {
