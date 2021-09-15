@@ -1,9 +1,9 @@
 let data = {
 	todos: [
-		{ id: 1, title: 'Einkaufen', beschreibung: 'Butter, Käse, Brot', prio: 1, erstelltAm: '20210914T072100', erledigenBis: '20210920T072100' },
-		{ id: 2, title: 'Haushalt', beschreibung: 'Wäsche waschen', prio: 1, erstelltAm: '20210915T072100', erledigenBis: '20210922T072100'},
-		{ id: 3, title: 'Wohnung', beschreibung: 'Aufräumen', prio: 1, erstelltAm: '20210911T072100', erledigenBis: '20210921T072100'},
-		{ id: 4, title: 'Abfall', beschreibung:'Abfall entsorgen', prio: 1, erstelltAm: '20210814T072100', erledigenBis: '20210910T072100'}
+		{ id: 1, title: 'Einkaufen', beschreibung: 'Butter, Käse, Brot', prio: 1, erstelltAm: '2021-09-15T11:07:55+02:00', erledigenBis: '2021-10-15T16:07:55+02:00' },
+		{ id: 2, title: 'Haushalt', beschreibung: 'Wäsche waschen', prio: 1, erstelltAm: '2021-09-15T12:07:55+02:00', erledigenBis: '2021-09-18T16:07:55+02:00'},
+		{ id: 3, title: 'Wohnung', beschreibung: 'Aufräumen', prio: 1, erstelltAm: '2021-09-15T10:07:55+02:00', erledigenBis: '2021-09-02T16:07:55+02:00'},
+		{ id: 4, title: 'Abfall', beschreibung:'Abfall entsorgen', prio: 1, erstelltAm: '2021-09-14T16:07:55+02:00', erledigenBis: '2021-09-15T16:07:55+02:00'}
 	]
 }
 
