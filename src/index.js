@@ -1,4 +1,4 @@
-const { get, getNextId, find, insert, update } = require('./data-access')
+const { get, getNextId, find, insert, deleting, update } = require('./data-access')
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
@@ -29,10 +29,19 @@ app.post('/api/todos/', (req, res) => {
 	res.send(ret)
 })
 
-app.put('/api/todos/:id', (req, res) => {
+app.put('/api/todos/', (req, res) => {
+	console.log(req.body);
+	const ret = deleting('todos', req.body)
+	if (!ret) {
+		res.statusCode = 404
+	}
+	res.send(ret)
+})
+
+app.put('/api/todos/delete/:id', (req, res) => {
 	console.log(req.body);
 	//update('todos', req.body)
-	const ret = update('todos', req.body)
+	const ret = deleting('todos', req.body)
 	if (!ret) {
 		res.statusCode = 404
 	}
