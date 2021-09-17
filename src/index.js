@@ -21,7 +21,7 @@ app.get('/api/todos/:id', (req, res) => {
 })
 
 app.post('/api/todos/', (req, res) => {
-
+	console.log("insert runs");
 	const ret = insert('todos', req.body)
 	if (!ret) {
 		res.statusCode = 404
@@ -29,9 +29,9 @@ app.post('/api/todos/', (req, res) => {
 	res.send(ret)
 })
 
-app.put('/api/todos/', (req, res) => {
-	console.log(req.body);
-	const ret = deleting('todos', req.body)
+app.put('/api/todos/:id', (req, res) => {
+	console.log("update runs");
+	const ret = update('todos', req.body)
 	if (!ret) {
 		res.statusCode = 404
 	}
@@ -39,8 +39,7 @@ app.put('/api/todos/', (req, res) => {
 })
 
 app.put('/api/todos/delete/:id', (req, res) => {
-	console.log(req.body);
-	//update('todos', req.body)
+	console.log("delete runs");
 	const ret = deleting('todos', req.body)
 	if (!ret) {
 		res.statusCode = 404
