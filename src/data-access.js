@@ -57,7 +57,6 @@ function insert(entity, row) {
 	data[entity].push(row)
 	writeNotesInFile()
 	return data[entity].find(e => e.id === row.id)
-
 }
 
 function deleting(entity, row) {
@@ -77,6 +76,7 @@ function update(entity, row) {
 			data.todos[i].beschreibung = row.beschreibung;
 			data.todos[i].prio = row.prio;
 			data.todos[i].erledigenBis = row.erledigenBis;
+			data.todos[i].erledigt = row.erledigt;
 			break;
 		}
 	}
