@@ -42,10 +42,11 @@ function writeNotesInFile(){
 }
 
 function readNotesInFile(){
-	var fs=require('fs');
-	var textData=fs.readFileSync('notes.txt', 'utf8');
-	data =JSON.parse(textData);
-	console.log(data)
+	const fs=require('fs');
+	let textData=fs.readFileSync('notes.txt', 'utf8');
+	if(textData!==""){
+		data =JSON.parse(textData);
+	}
 }
 
 function find(entity, id) {
@@ -54,6 +55,7 @@ function find(entity, id) {
 
 function insert(entity, row) {
 	row.id = getNextId()
+	//console.log(row);
 	data[entity].push(row)
 	writeNotesInFile()
 	return data[entity].find(e => e.id === row.id)
