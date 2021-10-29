@@ -1,4 +1,6 @@
-# Run Project
+# Backend TODO Application
+Creators: Patrick Grünenfelder & Marc Schoch
 
-1. `npm i`
+# Run Project
+1. `npm install`
 2. `npm start`
